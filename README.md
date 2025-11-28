@@ -7,7 +7,7 @@ The user can rotate through joints (J1–J4), adjust the selected joint using a 
 
 --------------------------------------------------------------------------------
 
-## 🚀 System Features
+## System Features
 
 - Manual selection of joints (J1 → J4)
 - Potentiometer-based angle adjustment (0° → 180°)
@@ -19,7 +19,7 @@ The user can rotate through joints (J1–J4), adjust the selected joint using a 
 
 --------------------------------------------------------------------------------
 
-## 🎛️ Inputs & Outputs
+## Inputs & Outputs
 
 ### Inputs
 - **SelectJointsForward** – go to the next joint
@@ -41,7 +41,7 @@ State LEDs:
 
 --------------------------------------------------------------------------------
 
-## 🖥️ SimulIDE Hardware-in-Loop Testing
+## SimulIDE Hardware-in-Loop Testing
 
 The project includes a full SimulIDE circuit (`project1.sim1`) allowing real-time testing with:
 
@@ -71,7 +71,7 @@ These images show the working simulation setup.
 └── README.md
 
 ```
-## 🛠️ Tools Used
+## Tools Used
 
 - MATLAB / Simulink
 - Stateflow
@@ -82,7 +82,7 @@ These images show the working simulation setup.
 
 --------------------------------------------------------------------------------
 
-## ▶️ How to Run
+## How to Run
 
 1. Open **RobotArm.slx** in Simulink.
 2. Click *Build* to generate Arduino firmware:
