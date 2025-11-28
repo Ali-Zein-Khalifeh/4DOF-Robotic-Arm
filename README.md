@@ -11,7 +11,7 @@ The user can rotate through joints (J1–J4), adjust the selected joint using a 
 
 - Manual selection of joints (J1 → J4)
 - Potentiometer-based angle adjustment (0° → 180°)
-- Confirmation button to save the new angle
+- Confirmation button to read the new angle
 - Safe switching logic with timers and debouncing
 - Servo motor output for each joint
 - LED indicators showing current active joint
