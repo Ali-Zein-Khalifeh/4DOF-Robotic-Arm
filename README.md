@@ -63,18 +63,16 @@ These images show the working simulation setup.
 ## 📁 Repository Structure
 
 4DOF_Robotic_Arm/
+├── RobotArm.slx
+├── RobotArm.slxc
+├── RobotArm.hex
+├── RobotArm.elf
+├── RobotArm.eep
+├── project1.sim1
 |
-├── RobotArm.slx         # Main Simulink/Stateflow model
-├── RobotArm.slxc        # Compiled model cache
-├── RobotArm.hex         # Arduino firmware (auto-generated)
-├── RobotArm.elf         # Executable firmware
-├── RobotArm.eep         # EEPROM file
-├── project1.sim1        # SimulIDE simulation circuit
+├── Screenshot_*.png
 |
-├── Screenshot_*.png     # Hardware-in-loop screenshots
-|
-└── README.md            # Project documentation
-
+└── README.md
 --------------------------------------------------------------------------------
 
 ## 🛠️ Tools Used
