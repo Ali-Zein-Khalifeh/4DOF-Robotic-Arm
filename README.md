@@ -58,22 +58,21 @@ Screenshots included:
 
 These images show the working simulation setup.
 
---------------------------------------------------------------------------------
 
 ## 📁 Repository Structure
 
 4DOF_Robotic_Arm/
+│
 ├── RobotArm.slx
 ├── RobotArm.slxc
 ├── RobotArm.hex
 ├── RobotArm.elf
 ├── RobotArm.eep
 ├── project1.sim1
-|
 ├── Screenshot_*.png
-|
 └── README.md
---------------------------------------------------------------------------------
+
+
 
 ## 🛠️ Tools Used
 
