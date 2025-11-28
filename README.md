@@ -1,13 +1,10 @@
-4DOF Robotic Arm Joint Control System (Simulink + Stateflow + Arduino)
+**4DOF Robotic Arm Joint Control System (Simulink + Stateflow + Arduino)**
 
 This project implements a manual control interface for a 4-DOF robotic arm, using MATLAB/Simulink, Stateflow, and automatic Arduino code generation.
 The system allows the user to select a joint, adjust its angle, and confirm the new position, with real-time hardware-in-loop validation in SimulIDE.
 
-
-
-Project Overview
-
-The system enables:
+**Project Overview**
+*The system enables:*
 
 Selecting one of the four robotic arm joints (J1, J2, J3, J4)
 
@@ -23,15 +20,16 @@ A Stateflow state machine controls transitions between joints and manages safe u
 
 
 
-Two digital inputs:
+**Two digital inputs:**
 
-SelectJointsForward
+*SelectJointsForward*
 
-SelectJointsBackward
+*SelectJointsBackward*
 
-Stateflow timers ensure transitions occur only when buttons are held for the required duration.
+*Stateflow timers ensure transitions occur only when buttons are held for the required duration.*
 
-✔ Joint Angle Adjustment
+
+**Joint Angle Adjustment**
 
 Potentiometer input on A1
 
@@ -39,7 +37,8 @@ Angle mapped from analog input → 0° to 180°
 
 Confirmation button ensures accidental adjustments are avoided
 
-✔ Joint Value Holding
+
+**Joint Value Holding**
 
 When switching joints:
 
@@ -47,9 +46,10 @@ Previously updated angles are stored and held
 
 Only the active joint receives new angle values
 
-✔ Servo Motor Control
+Servo Motor Control
 
-Each joint controls a servo:
+
+**Each joint controls a servo:**
 
 J1 → Pin 10
 
@@ -69,9 +69,10 @@ state3 → Pin 7
 
 state4 → Pin 8
 
-🧪 Hardware-in-loop Simulation (SimulIDE)
 
-The controller is tested in SimulIDE with:
+**Hardware-in-loop Simulation (SimulIDE)**
+
+**The controller is tested in SimulIDE with:*
 
 4 servo motors
 
@@ -85,7 +86,9 @@ Arduino Uno
 
 Real-time behavior matches Simulink outputs, validating the design.
 
-📁 Repository Contents
+
+
+**📁 Repository Contents**
 
 This repository includes:
 
@@ -99,7 +102,9 @@ Documentation of the state logic
 
 README.md
 
-🛠️ Technologies Used
+
+
+**Technologies Used**
 
 MATLAB / Simulink
 
@@ -113,7 +118,9 @@ Servo Motor control
 
 Real-time switching logic
 
-📜 How to Use
+
+
+**How to Use**
 
 Open the Simulink model.
 
