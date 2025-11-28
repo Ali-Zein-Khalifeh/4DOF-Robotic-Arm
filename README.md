@@ -58,9 +58,6 @@ Screenshots included:
 
 These images show the working simulation setup.
 
----
-## 📁 Repository Structure
-
 4DOF_Robotic_Arm/
 │
 ├── RobotArm.slx
@@ -72,7 +69,6 @@ These images show the working simulation setup.
 ├── Screenshot_*.png
 └── README.md
 
----
 
 ## 🛠️ Tools Used
 
