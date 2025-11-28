@@ -1,133 +1,115 @@
-**4DOF Robotic Arm Joint Control System (Simulink + Stateflow + Arduino)**
+# 4DOF Robotic Arm – Manual Joint Control System (Simulink + Stateflow + Arduino)
+
+This repository contains a complete manual joint-control interface for a 4-DOF robotic arm.
+The system is implemented using **MATLAB/Simulink**, **Stateflow**, and **automatic Arduino code generation**, and validated using **SimulIDE** for hardware-in-loop testing.
+
+The user can rotate through joints (J1–J4), adjust the selected joint using a potentiometer, and confirm the updated angle. Servo motors respond in real time according to the Stateflow logic.
+
+--------------------------------------------------------------------------------
 
-This project implements a manual control interface for a 4-DOF robotic arm, using MATLAB/Simulink, Stateflow, and automatic Arduino code generation.
-The system allows the user to select a joint, adjust its angle, and confirm the new position, with real-time hardware-in-loop validation in SimulIDE.
+## 🚀 System Features
 
-**Project Overview**
-*The system enables:*
+- Manual selection of joints (J1 → J4)
+- Potentiometer-based angle adjustment (0° → 180°)
+- Confirmation button to save the new angle
+- Safe switching logic with timers and debouncing
+- Servo motor output for each joint
+- LED indicators showing current active joint
+- Full validation using SimulIDE virtual Arduino
 
-Selecting one of the four robotic arm joints (J1, J2, J3, J4)
+--------------------------------------------------------------------------------
 
-Adjusting the selected joint angle through a potentiometer
+## 🎛️ Inputs & Outputs
 
-Confirming the new angle using a dedicated button
+### Inputs
+- **SelectJointsForward** – go to the next joint
+- **SelectJointsBackward** – go to the previous joint
+- **Potentiometer (A1)** – angle control  
+- **Confirm button** – read analog input for active joint
 
-Driving servo motors connected to the Arduino
+### Outputs (Arduino pins)
+- J1 servo → **Pin 10**  
+- J2 servo → **Pin 9**  
+- J3 servo → **Pin 6**  
+- J4 servo → **Pin 5**
 
-Visualizing and validating the whole system in SimulIDE
+State LEDs:
+- state1 → Pin 2  
+- state2 → Pin 4  
+- state3 → Pin 7  
+- state4 → Pin 8  
 
-A Stateflow state machine controls transitions between joints and manages safe updates of angles.
+--------------------------------------------------------------------------------
 
+## 🖥️ SimulIDE Hardware-in-Loop Testing
 
+The project includes a full SimulIDE circuit (`project1.sim1`) allowing real-time testing with:
 
-**Two digital inputs:**
+- Servo motors  
+- Potentiometer  
+- Push buttons (Forward / Backward / Confirm)  
+- LEDs for state indication  
+- Arduino Uno  
 
-*SelectJointsForward*
+Screenshots included:
+- `Screenshot 2025-10-27 222056.png`
+- `Screenshot 2025-10-28 192236.png`
+- `Screenshot 2025-10-30 003419.png`
 
-*SelectJointsBackward*
+These images show the working simulation setup.
 
-*Stateflow timers ensure transitions occur only when buttons are held for the required duration.*
+--------------------------------------------------------------------------------
 
+## 📁 Repository Structure
 
-**Joint Angle Adjustment**
+4DOF_Robotic_Arm/
+|
+├── RobotArm.slx         # Main Simulink/Stateflow model
+├── RobotArm.slxc        # Compiled model cache
+├── RobotArm.hex         # Arduino firmware (auto-generated)
+├── RobotArm.elf         # Executable firmware
+├── RobotArm.eep         # EEPROM file
+├── project1.sim1        # SimulIDE simulation circuit
+|
+├── Screenshot_*.png     # Hardware-in-loop screenshots
+|
+└── README.md            # Project documentation
 
-Potentiometer input on A1
+--------------------------------------------------------------------------------
 
-Angle mapped from analog input → 0° to 180°
+## 🛠️ Tools Used
 
-Confirmation button ensures accidental adjustments are avoided
+- MATLAB / Simulink
+- Stateflow
+- Embedded Coder for Arduino
+- SimulIDE (hardware-in-loop testing)
+- Arduino Uno
+- Servo motor actuation
 
+--------------------------------------------------------------------------------
 
-**Joint Value Holding**
+## ▶️ How to Run
 
-When switching joints:
+1. Open **RobotArm.slx** in Simulink.
+2. Click *Build* to generate Arduino firmware:
+   - RobotArm.hex  
+   - RobotArm.elf  
+   - RobotArm.eep  
+3. Open **SimulIDE** and load `project1.sim1`.
+4. Flash *RobotArm.hex* to the virtual Arduino.
+5. Rotate joints using:
+   - Forward button  
+   - Backward button  
+   - Potentiometer (angle)  
+   - Confirm button  
+6. Observe servo movements + state LEDs.
 
-Previously updated angles are stored and held
+--------------------------------------------------------------------------------
 
-Only the active joint receives new angle values
+## 👤 Author
 
-Servo Motor Control
+**Ali Zein Khalifeh**  
+Politecnico di Torino – Model-Based Software Design
 
+--------------------------------------------------------------------------------
 
-**Each joint controls a servo:**
-
-J1 → Pin 10
-
-J2 → Pin 9
-
-J3 → Pin 6
-
-J4 → Pin 5
-
-State indicators output on:
-
-state1 → Pin 2
-
-state2 → Pin 4
-
-state3 → Pin 7
-
-state4 → Pin 8
-
-
-**Hardware-in-loop Simulation (SimulIDE)**
-
-**The controller is tested in SimulIDE with:*
-
-4 servo motors
-
-Potentiometer
-
-Push buttons (Next, Previous, Confirm)
-
-State LEDs
-
-Arduino Uno
-
-Real-time behavior matches Simulink outputs, validating the design.
-
-
-
-**📁 Repository Contents**
-
-This repository includes:
-
-/SimulinkModel — Main Simulink and Stateflow controller
-
-/ArduinoCode — Generated .hex and .elf files
-
-/Images — SimulIDE circuit screenshots
-
-Documentation of the state logic
-
-README.md
-
-
-
-**Technologies Used**
-
-MATLAB / Simulink
-
-Stateflow
-
-Arduino Uno
-
-SimulIDE (hardware-in-loop)
-
-Servo Motor control
-
-Real-time switching logic
-
-
-
-**How to Use**
-
-Open the Simulink model.
-
-Generate code for Arduino using embedded coder.
-
-Open SimulIDE and load the circuit.
-
-Upload hex file to Arduino.
-
-Interact using potentiometer and buttons.
